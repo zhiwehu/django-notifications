@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from django.conf.urls import *
+try:
+    from django.conf.urls import *
+except:
+    # For django <= 1.3
+    from django.conf.urls.defaults import *
+
 
 urlpatterns = patterns('notifications.views',
     url(r'^$', 'all', name='all'),
